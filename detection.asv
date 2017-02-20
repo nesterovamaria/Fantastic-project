@@ -35,16 +35,16 @@ end
    if channel ==1 %Gaus
          snr=10^(0.1*SNRdb);
          for l=1:K
-             noise=(randn(1,length(x))+(1i*randn(1,length(x))))./sqrt(2*snr); 
-             y=x+noise;              %signal after channel
-             V(l)=abs(sum((x.*conj(y))))/N;   %matched filter output
+             noise=(randn(1,length(x))+(1i*randn(1,length(x))))./sqrt(2*snr);
+             y=x+noise;
+             V(l)=abs(sum((x.*conj(y))))/N;
          end
    elseif channel ==2 %Reyleigh
          snr=10^(0.1*SNRdb);
          for k=1:K
             noise=(randn(1,length(x))+(1i*randn(1,length(x))));
-            y=sqrt(2*snr).*(randn(1,length(x))+(1i*randn(1,length(x))))./sqrt(2).*x+noise;   %signal after channel
-            V(k)=(sum((abs(x.*conj(y)))))/N; %matched filter output
+            y=sqrt(2*snr).*(randn(1,length(x))+(1i*randn(1,length(x))))./sqrt(2).*x+noise;
+            V(k)=(sum((abs(x.*conj(y)))))/N;
          end
    else
            disp('ONLY Gaus and Rayleigh channels can be use in this program now');
@@ -130,7 +130,6 @@ end
                end
            
  end
- %Далее идут куски кода для графического представления данных
 %  dx1=[min(V):0.001:max(V)];
 % cdf=zeros(1,length(dx1));
 % for i=1:length(dx1)
