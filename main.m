@@ -16,7 +16,7 @@ for i = 1 : NUMBER_OF_RAYS
     end
 end
 % H - channel coefficients (rayleigh distribution)
-H = transp(raylrnd(1, 1, NUMBER_OF_RAYS) + 1i * raylrnd(1, 1, NUMBER_OF_RAYS));
+H = transp(randn(1, NUMBER_OF_RAYS) + 1i * randn(1, NUMBER_OF_RAYS));
 % Z - gaussian noise vector
 Z = transp(randn(1, NUMBER_OF_RAYS + SEQUENCE_LENGTH - 1) + 1i * randn(1, NUMBER_OF_RAYS + SEQUENCE_LENGTH - 1));
 % X - result matrix of received sequence after going through channel
